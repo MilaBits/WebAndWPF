@@ -1,0 +1,27 @@
+﻿@*@Model List<Song> >      @Model is uneccesary???*@
+@{
+    ViewBag.Title = "Songs";
+}
+
+<h2 class="page-header">Songs</h2>
+<div class="row">
+    <form class="form-inline" method="post" action="Songs">
+        <div class="form-group">
+            <input type="text" class="form-control" id="songSearchText" placeholder="Search..." name="searchTerm" />
+        </div>
+        <div class="form-group">	
+            <button type="submit" class="btn btn-default">Search</button>
+        </div>
+    </form>
+</div>
+<p></p>
+<div class="row">
+    <ul class="list-group">
+        @foreach (var song in Model)
+        {
+            <li class="list-group-item">
+                <p>@song.Title</p>
+            </li>
+        }
+    </ul>
+</div>

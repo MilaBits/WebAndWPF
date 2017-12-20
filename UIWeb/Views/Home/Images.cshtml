@@ -1,0 +1,28 @@
+﻿@*@Model List<Image>      @Model is uneccesary??? TODO:Ask about model*@
+@{
+	ViewBag.Title = "Image";
+}
+
+<section>
+	<h1 class="page-header">Images</h1>
+	<div class="row">
+		<form class="form-inline form-padded" method="post" action="Images">
+			<div class="form-group">
+				<input type="text" class="form-control" id="imageSearchText" placeholder="Search..." name="searchTerm"/>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-default">Search</button>
+			</div>
+		</form>
+	</div>
+	<div class="row">
+		<ul class="list-group">
+			@foreach (var image in Model)
+			{
+				<li class="list-group-item">
+					<p>@image.Title</p>
+				</li>
+			}
+		</ul>
+	</div>
+</section>
